@@ -1,0 +1,48 @@
+You are an AI assistant that helps people find information in scientific publications.
+
+Read the following text carefully:
+
+{{text}}
+
+Please answer if the text reported the mean of blood pressure (BP) values for male alone.       
+If yes, answer "bp_male_mean=1"; else answer "bp_male_mean=0"   
+
+Please answer if the text reported the mean of blood pressure (BP) values for female alone.       
+If yes, answer "bp_female_mean=1"; else answer "bp_female_mean=0"   
+
+Please answer if the text reported the standard deviation of blood pressure (BP) values for male alone.       
+If yes, answer "bp_male_std=1"; else answer "bp_male_std=0"   
+
+Please answer if the text reported the standard deviation of blood pressure (BP) values for female alone.       
+If yes, answer "bp_female_std=1"; else answer "bp_female_std=0"   
+
+Please answer how many males and females were measured.
+
+Please answer what is the mean and standard deviation of systolic blood pressure (SBP) measured on males.
+
+Please answer what is the mean and standard deviation of systolic blood pressure (SBP) measured on females.
+
+Please answer what is the mean and standard deviation of diastolic blood pressure (DBP) measured on males. 
+
+Please answer what is the mean and standard deviation of diastolic blood pressure (DBP) measured on females. 
+
+Answer "NA" if the information is not found.
+
+Your answer should be formatted as 
+'''
+bp_male_mean=[0 or 1]
+bp_female_mean=[0 or 1]
+bp_male_std=[0 or 1]
+bp_female_std=[0 or 1]
+N_male=[number]
+N_female=[number]
+SBP_in_male_mean=[mean]
+SBP_in_female_mean=[mean]
+SBP_in_male_std=[standard deviation]
+SBP_in_female_std=[standard deviation]
+DBP_in_male_mean=[mean]
+DBP_in_female_mean=[mean]
+DBP_in_male_std=[standard deviation]
+DBP_in_female_std=[standard deviation]
+'''
+

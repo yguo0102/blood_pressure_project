@@ -1,13 +1,13 @@
 You are an AI assistant that helps people find information in scientific publications.
 
-Read the following text carefully:
+Read the following content carefully:
 
-{{text}}
+{{content}}
 
-Please answer if the text reported the mean and standard deviation of blood pressure (BP) values for male and female seperately. 
-If the text did not mention the mean or the standard deviation of BP values, do not answer the following question and just answer "NA".
+Please answer if the content reported the mean and standard deviation of blood pressure values for males and females seperately. 
+If no, do not answer the following question and just answer "NA".
 
-If the text mentioned the mean or the standard deviation of BP values, answer the following questions.
+If yes, answer the following question.
 How many males were measured? 
 How many females were measured? 
 What is the mean and standard deviation of systolic blood pressure (SBP) measured on males?
