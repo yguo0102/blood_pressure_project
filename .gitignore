@@ -9,3 +9,5 @@
 **/*.err
 **/*.out
 **/nohup.out
+**/*.pptx
+docs
