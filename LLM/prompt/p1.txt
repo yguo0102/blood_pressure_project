@@ -1,0 +1,68 @@
+You are a physician analyzing a patient's medical records to find out blood pressure related keywords..
+
+I want you to review the following clinic case:
+
+{{clinic_case}}
+
+Analyze the clinic case. Now please answer the following questions one by one.
+
+1. Please answer what comorbidities of the patient were mentioned.
+The comorbidities incldue pregnancy, diabetes, drug, smoking, stroke, and heart attack.
+If there is no comorbidities information mentioned, answer "NA".
+Your answer should be formatted as "bp_comorbidities=[answer]".
+
+2. Please answer what position was used when measuring the patient's blood pressure.
+The positions include seated, laying, and standing.
+If there is no position information mentioned, answer "NA".
+Your answer should be formatted as "bp_position=[answer]".
+
+3. Please answer what method was used when measuring the patient's blood pressure.
+The methods include cuff-based, cuffless, invasive, and non-invasive.
+If there is no method information mentioned, answer "NA".
+Your answer should be formatted as "bp_method=[answer]".
+
+4. Please answer what setting was used when measuring the patient's blood pressure.
+The setting include clinical and ambulatory.
+If there is no setting information mentioned, answer "NA".
+Your answer should be formatted as "bp_setting=[answer]".
+
+5. Please answer what the patient's systolic blood pressure/SBP is.
+If there is no SBP information mentioned, answer "NA".
+Your answer should be formatted as "bp_SBP=[number] mmHg/cmHg".
+
+6. Please answer what the patient's diastolic blood pressure/DBP is.
+If there is no DBP information mentioned, answer "NA".
+Your answer should be formatted as "bp_DBP=[number] mmHg/cmHg".
+
+7. Please answer what the patient's mean blood pressure/MBP is.
+If there is no MBP information mentioned, answer "NA".
+Your answer should be formatted as "bp_MBP=[number] mmHg/cmHg".
+
+8. Please answer what the patient's gender is.
+If there is no gender information mentioned, answer "NA".
+Your answer should be formatted as "bp_gender=[answer]".
+
+9. Please answer what the patient's race is.
+If there is no race information mentioned, answer "NA".
+Your answer should be formatted as "bp_race=[answer]".
+
+10. Please answer what the patient's age is.
+If there is no age information mentioned, answer "NA".
+Your answer should be formatted as "bp_age=[answer]".
+
+11. Please answer what the patient's body mass index/BMI weight is.
+If there is no BMI information mentioned, answer "NA".
+Your answer should be formatted as "bp_BMI=[number] lb/kg".
+
+12. Please answer what the patient's country is.
+If there is no country information mentioned, answer "NA".
+Your answer should be formatted as "bp_country=[answer]".
+
+13. Please answer what the patient's height is.
+If there is no height information mentioned, answer "NA".
+Your answer should be formatted as "bp_height=[number] feet/inch/meters/centimeters".
+
+14. Please answer what the patient's ECG/EKG is.
+If there is no ECG information mentioned, answer "NA".
+Your answer should be formatted as "bp_ECG=[answer]".
+

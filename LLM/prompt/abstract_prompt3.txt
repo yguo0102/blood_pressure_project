@@ -1,0 +1,28 @@
+You are an AI assistant that helps people find information in scientific publications.
+
+Read the abstract carefully:
+
+{{abstract}}
+
+Please answer if the abstract reported the mean and deviation of blood pressure values for male and female seperately. 
+If no, do not answer the following question and just answer "NA".
+
+If yes, answer the following question.
+How many males were measured? 
+How many females were measured? 
+What is the mean and deviation of systolic blood pressure (SBP) measured on males?
+What is the mean and deviation of systolic blood pressure (SBP) measured on females? 
+What is the mean and deviation of diastolic blood pressure (DBP) measured on males? 
+What is the mean and deviation of diastolic blood pressure (DBP) measured on females? 
+Answer "NA" if the information is not found.
+
+Your answer should be formatted as 
+'''
+N_male=[number]
+N_female=[number]
+SBP_in_male=[mean ± standard deviation]
+SBP_in_female=[mean ± standard deviation]
+DBP_in_male=[mean ± standard deviation]
+DBP_in_female=[mean ± standard deviation]
+'''
+

@@ -1,0 +1,35 @@
+You are an AI assistant that helps people find information in scientific publications.
+
+Read the abstract carefully:
+
+{{abstract}}
+
+Please answer if the abstract mentions any of the following conditions: pregnancy, diabetes, drug, smoking, stroke, and heart attack. If not, answer "NA". Your answer should be formatted as "bp_conditions=[answer]".
+
+Please answer if the abstract mentions any other comorbidities that could be related to an unregulated (high or low) blood pressure.
+Answer "NA", if there is not enough information, or if you are not confident. Your answer should be formatted as "bp_comorbidities=[answer]".
+
+Please answer if the abstract mentions the position. The possible positions include ‘seated’, ‘laying’, and ‘standing’. If there is no position information mentioned, answer "NA". Your answer should be formatted as "bp_position=[answer]".
+
+Please answer what type of technology was used when measuring the blood pressure. The methods include ‘cuff-based’, ‘cuffless’, ‘invasive’, ‘non-invasive’, or ‘continuous’. If there is no method information mentioned, answer "NA". Your answer should be formatted as "bp_method=[answer]".
+
+Please answer if the blood pressure was measured outside a clinical setting (for example at home), or at a clinical setting (for example in a clinic or hospital). Please answer ‘inside’ or ‘outside’,  and if there is no setting information mentioned, answer "NA".
+Your answer should be formatted as "bp_setting=[answer]".
+
+Please answer what systolic blood pressure (SBP) is mentioned.
+If there is no SBP information mentioned, answer "NA". SBP may be mentioned in mmHg or in cmHg. Your answer should be formatted as "bp_SBP=[number] mmHg/cmHg".
+
+Please answer what diastolic blood pressure (DBP) is mentioned.
+If there is no DBP information mentioned, answer "NA". DBP may be mentioned in mmHg or in cmHg. Your answer should be formatted as "bp_DBP=[number] mmHg/cmHg".
+
+Please answer if blood pressure was measured once, or mentioned as the average or multiple measurements. If there is no information mentioned, answer "NA". Your answer should be formatted as "bp_meas_times=[multiple/number], where ‘multiple’ is True or False, and ‘number’ is the number of measurements for averaging.
+
+Please answer what mean blood pressure (MBP) is mentioned. If there is no MBP information mentioned, answer "NA". Your answer should be formatted as "bp_MBP=[number] mmHg/cmHg".
+
+Please answer what heart rate (or pulse rate) is mentioned.
+If there is no heart rate information mentioned, answer "NA".
+Your answer should be formatted as "bp_hr=[number] bpm".
+
+Please list any ECG-based information that is mentioned.
+If there is no ECG information mentioned, answer "NA".
+Your answer should be formatted as "bp_ECG=[answer]".
