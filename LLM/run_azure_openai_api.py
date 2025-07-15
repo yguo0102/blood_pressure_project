@@ -7,9 +7,11 @@ from datetime import datetime, timedelta
 import re
 import json
 import traceback
+import sys
+
 
 # API info
-engine_id = 'gpt-35-16k'
+engine_id = 'gpt-35'
 openai.api_type = "azure"
 openai.api_version = "2024-02-15-preview"
 openai.api_base = "https://sarkerlab-north-central-us.openai.azure.com/"
@@ -19,42 +21,20 @@ temperature = 0.5
 top_p = 0.95
 
 # prompt file
-prompt_file = 'prompt/p_0326.txt'
+prompt_file = 'prompt/prompt.txt'
 with open(prompt_file) as f:
     prompt_text = f.read()
 
 # data file
-cases = pd.read_csv('/labs/sarkerlab/yguo262/solr-9.5.0/bp_pmc_html_text_output_split_output.clean.csv', dtype=str)
+infile = sys.argv[1] # such as train.csv
+outfile = sys.argv[2]
+
+cases = pd.read_csv(infile, dtype=str)
 col_id_name = 'pmc_s'
-col_text_name = 'text_txt_en'
+col_text_name = 'text'
 text_placeholder = '{{text}}'
 
-#limit to random n cases for initial testing
-selected_cases = [
-'PMC3559353',
-'PMC6514120',
-'PMC4405040',
-'PMC5753482',
-'PMC10424594',
-'PMC9289178',
-'PMC10675948',
-'PMC7093979',
-'PMC10289778',
-'PMC4661678',
-'PMC7228482',
-'PMC3559098',
-'PMC10082210',
-'PMC9787390',
-'PMC8055644',
-'PMC6322720',
-'PMC6417676',
-'PMC8678805',
-'PMC10254090',
-'PMC9519835',
-]
 #cases = cases.sample(n=1, random_state=1).reset_index(drop=True)
-cases = cases[cases[col_id_name].isin(selected_cases)].reset_index(drop=True)
-
 
 # keep records of answers
 records = {col_id_name:[], 'response':[]}
@@ -98,8 +78,8 @@ for i in range(len(cases)):
                 response = openai.ChatCompletion.create(
                                                         engine=engine_id,
                                                         messages=messages,
-                                                        temperature=0.2,
-                                                        top_p=0.1,
+                                                        temperature=temperature,
+                                                        top_p=top_p,
                                                         n=1,
                                                         stop=None)
                 cases.at[i, 'full_prompt'] = full_prompt
@@ -121,7 +101,6 @@ for i in range(len(cases)):
 #######################################
 
 # Save the cases DataFrame to a CSV file
-cases.to_csv(f"cases_with_responses_{engine_id}_{datetime.now().strftime('%Y-%m-%d_%H%M')}.csv", index=False)
-print(f"Saved cases to CSV file: cases_with_responses_{engine_id}_{datetime.now().strftime('%Y-%m-%d_%H%M')}.csv")
+cases.to_csv(outfile, index=False)
 
 

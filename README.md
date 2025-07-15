@@ -1,24 +1,16 @@
-This folder contains the Python scripts used in the blood pressure study written by Yuting Guo.
+This repository contains the implementation of the NLP system in the study "Leveraging Few-Shot Learning and Large Language Models for Analyzing Blood Pressure Variations Across Biological Sex from Scientific Literature".
 
 # File Description
 
 The `data_process` folder contains the python scripts related to data downloading and preprocessing.
 | Filename                    | Description                                                                       |
 |-----------------------------|-----------------------------------------------------------------------------------|
-| data_process/NCDRISC data download.ipynb | Automatically download the datasets from https://ncdrisc.org/data-downloads.html. |
-| data_process/NCDRISC data check.ipynb    | Check whether the zip files contains all the country-specific csv files.  	  |
-| data_process/Parse AHA papers.ipynb      | Get the plain text splitted by sections from [ahajournals.org](https://www.ahajournals.org/). |
-| data_process/Parse Lancet papers.ipynb   | Get the plain text splitted by sections from [https://www.thelancet.com/](https://www.thelancet.com/). |
-| data_process/split_data.py               | Split a large csv file into smaller csv files. |
-| data_process/parse_ner.py     	   | TBD |
+| data_process/PMC data.ipynb | Decompress the data downloaded from PMC and extract the manuscript text |
+| data_process/Prepare dataset.ipynb    | Perform 5-fold split and convert the data to the BIO format  	  |
 
-The `LLM` folder contains the Python scripts related to doing prediction/inference by LLM and processing the LLM's answers.
+The `LLM` folder contains the Python scripts related to model inference and post-processing of the LLM answers.
 | Filename                    | Description                                                                       |
 |-----------------------------|-----------------------------------------------------------------------------------|
-| LLM/run_predict.py  			   | Run predcition using the LLM via Azure OpenAI API. |
-| LLM/parse_abstract_response.py   	   | Parse the LLM's answers into a table.  	  |
-
-The `deidentification` folder contains Python scripts related to deidentifying the clinical notes.
-| Filename                    | Description                                                                       |
-|-----------------------------|-----------------------------------------------------------------------------------|
-| deidentification/deid_transformers.py  	| TBD |
+| LLM/run_azure_openai_api.py | Run model inference using the LLM API supported by Microsoft Azure OpenAI. |
+| LLM/post_process.py   	  | Parse the LLM's answers to extract the varibales and filter out the invalid values.  	  |
+| LLM/Evaluate ner.ipynb      | Evaluate the model performance using NER metrics. |
